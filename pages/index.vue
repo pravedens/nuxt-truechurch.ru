@@ -1,6 +1,7 @@
 <script setup lang="ts">
 function openAbout() {
-    navigateTo("/about");
+    setPageLayout("auth");
+    //navigateTo("/about");
 }
 </script>
 <template>
