@@ -2,14 +2,13 @@
 import InputField from '~/components/InputField.vue';
 
 function openAbout() {
-    setPageLayout("auth");
-    //navigateTo("/about");
+
+    navigateTo("/about");
 }
 </script>
 <template>
     <div>
         Index
-        <IconTwitter />
         <Icon name="icons:twitter" />
         <!--<NuxtLink to="/about">About</NuxtLink>-->
         <button @click="openAbout">Перейти</button>
