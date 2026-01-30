@@ -151,6 +151,12 @@ hr {
     color: var(--color-black);
 }
 
+.footer hr {
+    border: none;
+    border-bottom: 1px solid var(--color-gray);
+    height: 1px;
+}
+
 /* Адаптивность */
 @media (max-width: 768px) {
     .footer {

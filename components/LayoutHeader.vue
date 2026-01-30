@@ -35,6 +35,9 @@
     justify-content: space-between;
     margin-top: 48px;
     border-bottom: 1px solid var(--color-gray);
+    padding: 0 24px;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .header__content {
@@ -55,13 +58,29 @@
     color: var(--color-black);
     text-decoration: none;
     padding-bottom: 48px;
+    white-space: nowrap;
+}
+
+.header__menu a:hover {
+    color: var(--color-dark-gray);
+}
+
+.header__menu a.router-link-active {
+    border-bottom: 1px solid var(--color-black);
 }
 
 .header__icons {
     display: flex;
     gap: 40px;
     align-items: center;
+}
+
+.header__icons a {
     padding-bottom: 48px;
+}
+
+.header__icons a.router-link-active {
+    border-bottom: 1px solid var(--color-black);
 }
 
 .header__hr {
@@ -69,5 +88,85 @@
     height: 17px;
     align-self: flex-start;
     margin-top: 4px;
+}
+
+/* Адаптивность */
+@media (max-width: 1024px) {
+    .header {
+        max-width: 90%;
+        padding: 0 20px;
+    }
+    
+    .header__content {
+        gap: 40px;
+    }
+    
+    .header__menu {
+        gap: 40px;
+    }
+}
+
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+        margin-top: 30px;
+        padding: 0 16px;
+    }
+    
+    .header__content {
+        flex-direction: column;
+        gap: 30px;
+        width: 100%;
+        align-items: center;
+    }
+    
+    .header__menu {
+        flex-direction: column;
+        gap: 20px;
+        width: 100%;
+        align-items: center;
+    }
+    
+    .header__menu a {
+        padding-bottom: 20px;
+        width: 100%;
+        text-align: center;
+    }
+    
+    .header__hr {
+        display: none;
+    }
+    
+    .header__icons {
+        gap: 30px;
+        padding-bottom: 20px;
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .header__icons a {
+        padding-bottom: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .header {
+        margin-top: 20px;
+        gap: 20px;
+    }
+    
+    .header__content {
+        gap: 20px;
+    }
+    
+    .header__menu {
+        gap: 15px;
+    }
+    
+    .header__icons {
+        gap: 20px;
+    }
 }
 </style>
