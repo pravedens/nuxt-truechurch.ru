@@ -11,6 +11,26 @@ import "~/assets/styles/main.css";
 
 <template>
   <NuxtLayout>
-    <NuxtPage />
+    <main class="main">
+      <NuxtPage />
+    </main>
   </NuxtLayout>
 </template>
+
+<style scoped>
+.main {
+  margin: 0 auto;
+  max-width: 1248px;
+  padding: 40px 0;
+}
+
+.page-enter-active,
+.page-leave-active {
+  transition: all 0.5s;
+}
+
+.page-enter-from,
+.page-leave-to {
+  opacity: 0;
+}
+</style>

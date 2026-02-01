@@ -20,9 +20,16 @@ export default defineNuxtConfig({
 
   },
 
+  app: {
+    pageTransition: {
+      name: 'page',
+      mode: 'out-in'
+    }
+  },
+
   modules: [
     '@nuxt/eslint',
-    '@nuxt/fonts',
+    //'@nuxt/fonts',
     '@nuxt/image',
     '@nuxt/scripts',
     '@nuxt/icon'
