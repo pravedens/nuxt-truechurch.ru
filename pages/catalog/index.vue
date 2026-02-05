@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import type { GetCategoriesResponse } from "~/interfaces/category.interface";
-import type { Product } from "~/interfaces/product.interface";
+import type { GetProductsResponse } from "~/interfaces/product.interface";
 
 const config = useRuntimeConfig();
 const API_URL = config.public.apiurl;
@@ -21,25 +21,15 @@ const categoriesSelect = computed(() => {
     : [selectDefault];
 });
 
-const product: Product = {
-  id: 7,
-  name: "Infinity Ring Set",
-  price: 150,
-  short_description: "Набор колец 'Бесконечность'",
-  long_description:
-    "Стильный набор из трех колец разного размера с символом бесконечности. Выполнен из серебра 925 пробы с родиевым покрытием.",
-  sku: "RING-INF-SET",
-  discount: 25,
-  images: ["/images/jewelry/infinity1.jpg", "/images/jewelry/infinity2.jpg"],
-  category_id: 2,
-  category: {
-    id: 2,
-    name: "Кольца",
-    alias: "rings",
+const { data: productsData } = await useFetch<GetProductsResponse>(
+  API_URL + "/products",
+  {
+    query: {
+      limit: 20,
+      offset: 0,
+    }
   },
-  created_at: new Date,
-  updated_at: new Date,
-};
+);
 </script>
 
 <template>
@@ -49,8 +39,8 @@ const product: Product = {
       <div class="catalog__filter">
         <SelectField v-model="select" :options="categoriesSelect" />
       </div>
-      <div>
-        <CatalogCard v-bind="product"/>
+      <div class="catalog__grid">
+        <CatalogCard v-for="product in productsData?.products" :key="product.id" v-bind="product" />
       </div>
     </div>
   </div>
@@ -64,5 +54,12 @@ const product: Product = {
 
 .catalog__filter {
   width: 260px;
+}
+
+.catalog__grid {
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px 12px;
 }
 </style>

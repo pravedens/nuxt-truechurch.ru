@@ -35,7 +35,7 @@
     justify-content: space-between;
     margin-top: 48px;
     border-bottom: 1px solid var(--color-gray);
-    padding: 0 24px;
+    padding: 0 16px;
     width: 100%;
     box-sizing: border-box;
 }
