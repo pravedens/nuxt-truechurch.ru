@@ -5,7 +5,8 @@ export default defineNuxtConfig({
   runtimeConfig: {
     token: "",
     public: {
-      apiurl: ""
+      apiurl: "",
+      imageurl: ""
     },
     
   },
