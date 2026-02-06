@@ -4,13 +4,19 @@ import type { GetProductsResponse } from "~/interfaces/product.interface";
 
 const config = useRuntimeConfig();
 const API_URL = config.public.apiurl;
-const category_id = ref("");
+const route = useRoute();
+const router = useRouter();
+const category_id = ref(route.query.category_id?.toString() ?? "");
+
+watch(category_id, () => {
+  router.replace({ query: { category_id: category_id.value } });
+});
 
 const query = computed(() => ({
-  limit: 20,
-  offset: 0,
-  category_id: category_id.value || undefined,
-}))
+  limit: route.query.limit ?? 20,
+  offset: route.query.offset ?? 0,
+  category_id: route.query.category_id || undefined,
+}));
 
 const { data } = await useFetch<GetCategoriesResponse>(API_URL + "/categories");
 
@@ -30,6 +36,7 @@ const categoriesSelect = computed(() => {
 const { data: productsData } = await useFetch<GetProductsResponse>(
   API_URL + "/products",
   {
+    key: 'get-products',
     query,
   },
 );
@@ -43,7 +50,11 @@ const { data: productsData } = await useFetch<GetProductsResponse>(
         <SelectField v-model="category_id" :options="categoriesSelect" />
       </div>
       <div class="catalog__grid">
-        <CatalogCard v-for="product in productsData?.products" :key="product.id" v-bind="product" />
+        <CatalogCard
+          v-for="product in productsData?.products"
+          :key="product.id"
+          v-bind="product"
+        />
       </div>
     </div>
   </div>
