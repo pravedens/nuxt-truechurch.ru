@@ -14,8 +14,8 @@ const { options } = defineProps<{
     </select>
     <svg
       fill="#000000"
-      height="14px"
-      width="14px"
+      height="34px"
+      width="34px"
       version="1.1"
       xmlns="http://www.w3.org/2000/svg"
       xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -38,8 +38,8 @@ const { options } = defineProps<{
 
 .select-wrapper svg{
     position: absolute;
-    right: 24px;
-    top: 22px;
+    right: 6px;
+    top: 16px;
 }
 
 .select {
