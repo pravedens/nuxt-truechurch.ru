@@ -28,6 +28,6 @@ export default defineNuxtConfig({
     }
   },
 
-  modules: ['@nuxt/eslint', //'@nuxt/fonts',
-  '@nuxt/image', '@nuxt/scripts', '@nuxt/icon', '@nuxtjs/tailwindcss']
+  modules: [//'@nuxt/fonts',
+  '@nuxt/eslint', '@nuxt/image', '@nuxt/scripts', '@nuxt/icon', '@nuxtjs/tailwindcss', '@pinia/nuxt']
 })
