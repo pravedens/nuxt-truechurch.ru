@@ -1,7 +1,9 @@
 <script setup lang="ts">
 import { useFavoritesStore } from '~/stores/favorites.store';
 const favoriteStore = useFavoritesStore();
-favoriteStore.addToFavorite(1);
+await callOnce('fetchFavorites', () => favoriteStore.fetchFavorites(), {
+    mode: "navigation",
+});
 </script>
 
 <template>
