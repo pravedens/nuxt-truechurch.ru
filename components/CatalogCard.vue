@@ -6,14 +6,17 @@ const config = useRuntimeConfig();
 const image = computed(
   () => `url(${config.public.imageurl}${product.images[0]})`,
 );
+const isHovered = ref(false);
 </script>
 
 <template>
-  <NuxtLink class="card" :to="`/catalog/${product.id}`">
+  <NuxtLink class="card" :to="`/catalog/${product.id}`" @mouseenter="isHovered = true" @mouseleave="isHovered = false">
     <div class="card__image">
       <span v-if="product.discount > 0" class="card__discount"
         >-{{ product.discount }}%</span
       >
+      <span v-else></span>
+      <AddFavorite :id="product.id" :is-shown="isHovered" />
     </div>
     <div class="card__footer">
       <div class="card__name">
@@ -42,12 +45,15 @@ const image = computed(
   background-repeat: no-repeat;
   background-size: cover;
   background-image: v-bind(image);
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
 }
 
 .card__footer {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
 
 .card__name {
