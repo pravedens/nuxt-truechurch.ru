@@ -9,7 +9,7 @@ const favoriteStore = useFavoritesStore();
 <template>
   <div>
     <button v-show="isShown || favoriteStore.isFavorite(id)" class="fav-button" @click.stop.prevent="() => favoriteStore.toggleFavorite(id)">
-      <Icon name="icons:favorite-add" size="18px" />
+      <Icon name="icons:favorite-add" size="28px" />
     </button>
   </div>
 </template>
