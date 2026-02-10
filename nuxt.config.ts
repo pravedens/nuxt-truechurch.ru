@@ -22,6 +22,17 @@ export default defineNuxtConfig({
   },
 
   app: {
+    head: {
+      title: 'Магазин Shoppe',
+      htmlAttrs: {
+        lang: 'ru'
+      },
+      link: [
+        { rel: 'icon', type: 'image/png', href: '/favicon.ico' },
+        { rel: 'manifest', crossorigin: "anonymous", href: '/manifest.webmanifest'}
+      ]
+
+    },
     pageTransition: {
       name: 'page',
       mode: 'out-in'
