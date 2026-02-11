@@ -49,6 +49,10 @@ export default defineNuxtConfig({
     }
   },
 
+  robots: {
+    disallow: ['/account']
+  },
+
   modules: [//'@nuxt/fonts',
-  '@nuxt/eslint', '@nuxt/image', '@nuxt/scripts', '@nuxt/icon', '@nuxtjs/tailwindcss', '@pinia/nuxt', 'pinia-plugin-persistedstate/nuxt', '@nuxtjs/sitemap']
+  '@nuxt/eslint', '@nuxt/image', '@nuxt/scripts', '@nuxt/icon', '@nuxtjs/tailwindcss', '@pinia/nuxt', 'pinia-plugin-persistedstate/nuxt', '@nuxtjs/sitemap', '@nuxtjs/robots']
 })
