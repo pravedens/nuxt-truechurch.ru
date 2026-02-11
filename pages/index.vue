@@ -5,6 +5,12 @@ function openAbout() {
 
     navigateTo("/about");
 }
+
+useSeoMeta({
+  title: "Магазин Shoppe",
+  description: "Магазин Shoppe с ювелирными товарами",
+  ogDescription: "Магазин Shoppe с ювелирными товарами",
+});
 </script>
 <template>
     <div>

@@ -1,6 +1,12 @@
 <script setup lang="ts">
 import type { Product } from "~/interfaces/product.interface";
 
+useSeoMeta({
+  title: "Избранное",
+  description: "Избранное магазина Shoppe с ювелирными товарами",
+  ogDescription: "Избранное магазина Shoppe с ювелирными товарами",
+});
+
 const favoriteStore = useFavoritesStore();
 const API_URL = useAPI();
 const products = ref<Product[]>();
