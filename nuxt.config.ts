@@ -40,6 +40,15 @@ export default defineNuxtConfig({
     }
   },
 
+  sitemap: {
+    sources: ['/api/sitemap/urls'],
+    defaults: {
+      lastmod: new Date().toISOString(),
+      priority: 0.5,
+      changefreq: 'weekly'
+    }
+  },
+
   modules: [//'@nuxt/fonts',
-  '@nuxt/eslint', '@nuxt/image', '@nuxt/scripts', '@nuxt/icon', '@nuxtjs/tailwindcss', '@pinia/nuxt', 'pinia-plugin-persistedstate/nuxt']
+  '@nuxt/eslint', '@nuxt/image', '@nuxt/scripts', '@nuxt/icon', '@nuxtjs/tailwindcss', '@pinia/nuxt', 'pinia-plugin-persistedstate/nuxt', '@nuxtjs/sitemap']
 })
