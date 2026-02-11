@@ -7,7 +7,7 @@ function openAbout() {
 }
 
 useSeoMeta({
-  title: "Магазин Shoppe",
+  title: "Магазин",
   description: "Магазин Shoppe с ювелирными товарами",
   ogDescription: "Магазин Shoppe с ювелирными товарами",
 });

@@ -15,6 +15,10 @@ useSeoMeta({
 
 <template>
   <div>
+    <!--<Head>
+      <Title>Купить - {{ data?.product.name }}</Title>
+      <Meta name="description" :content="data?.product.short_description" />
+    </Head>-->
     <div>{{ data?.product.name }}</div>
   </div>
 </template>
