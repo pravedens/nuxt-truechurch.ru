@@ -1,5 +1,7 @@
+import type { CreateFavorite} from "~/interfaces/favorite.interface";
+
 export default defineEventHandler(async (event) => {
-    const body = await readBody<{ a: number }>(event);
-    console.log(body)
+    const { email, ids } = await readBody<CreateFavorite>(event);
+    await useStorage('db').setItem(email, ids)
     return { success: true }
 })
