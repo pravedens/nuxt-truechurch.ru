@@ -27,6 +27,15 @@ export default defineNuxtConfig({
 
   },
 
+  nitro: {
+    storage: {
+      db: {
+        driver: 'fs-lite',
+        base: './db'
+      }
+    }
+  },
+
   app: {
     head: {
       title: 'Магазин Shoppe',
